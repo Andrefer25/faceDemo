@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: rgb(56, 243, 243);
+}
+
+.face {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background-color: #ffcd00;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.face::before {
+    content: '';
+    position: absolute;
+    top: 190px;
+    width: 60px;
+    height: 60px;
+    background: #b57700;
+    border-radius: 50%;
+    transition: 0.5s;
+}
+
+.face:hover::before {
+    top: 180px;
+    width: 150px;
+    height: 70px;
+    background-color: #b57700;
+    border-radius: 0;
+    border-bottom-left-radius: 70px;
+    border-bottom-right-radius: 70px;
+}
+
+.eyes {
+    position: relative;
+    top: -40px;
+    display: flex;
+}
+
+.eyes .eye {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    display: block;
+    background-color: white;
+    margin: 0 15px;
+    border-radius: 50%;
+    animation: eye 10s infinite;
+}
+
+
+.eyes .eye::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 25px;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
+    background-color: black;
+    border-radius: 50%;
+    animation: blink 10s infinite;
+}
+
+@keyframes eye {
+    0%, 5%, 30%, 37%, 100% {
+        background-color: white;
+    }
+    3%, 33% {
+        background-color: #ffcd00;
+    }
+}
+
+@keyframes blink {
+    0%, 5%, 30%, 37%, 100% {
+        background-color: black;
+    }
+    3%, 33% {
+        background-color: #ffcd00;
+    }
+}
